@@ -1,1 +1,32 @@
-$blue: red;
+$radius: 50%;
+
+html,body {
+    overflow-x:hidden;
+}
+
+
+#header {
+    background-color: black;
+}
+
+
+#coin-stack {
+    height: 49px;
+    width: 49px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: $radius;
+}
+
+#balance {
+    text-align: center;
+    margin: 10px;
+}
+
+#desc1,#desc2,#desc3 {
+    color: black;
+}
+
+section {
+    background-color: rgb(130, 238, 162);
+}
