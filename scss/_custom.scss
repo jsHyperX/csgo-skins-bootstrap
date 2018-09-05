@@ -1,65 +1,69 @@
-$radius: 50%;
-$black-color: black;
-$white-color: white;
-$lighbluecolor: rgb(130, 238, 162); 
+$radius: 50%; 
 $margin10: 10px;
 $margin15: 15px;
 $margin25: 25px;
 $margin39: 39px;
 
-$hero-img: url('../favicon/csgoteams.jpg')  center center no-repeat;
-$hero-size: cover;
+@mixin bg-image-gen($path:'',$sz:cover,$adjust: center center no-repeat) {
+    background: url($path) $adjust;
+    background-size: $sz;
+}
+
+@mixin set-bg-color($color: white) {
+    background-color: $color;
+}
+
+@mixin txt-color($color: white) {
+    color: $color;
+}
 
 html,body {
     overflow-x:hidden;
-}
-
-#header {
-    background-color: $black-color;
-}
-
-#coin-stack {
-    height: $margin39;
-    width: $margin39;
-    margin-right: $margin10;
-    margin-left: $margin10;
-    margin-top: $margin10;
-    border-radius: $radius;
-}
-
-#hero {
-    background: $hero-img;
-    background-size: $hero-size;
-    color: $white-color;
-    overflow: hidden;
-}
-
-#information {
-    color: $black-color;
-}
-
-#txt-body {
-    background-color: rgba(228, 198, 117, 0.904);
-}
-#coin {
-    height: $margin25;
-    width: $margin25;
-    margin-right: $margin10;
-    margin-left: $margin10;
-    margin-top: $margin10;
-    border-radius: $radius;
-}
-
-#balance {
-    text-align: center;
-    margin: $margin25;
-    color: $white-color;
-}
-
-#desc1,#desc2,#desc3 {
-    color: $black-color;
+    #header {
+        @include set-bg-color(black);
+        #coin-stack {
+            height: $margin39;
+            width: $margin39;
+            margin-right: $margin10;
+            margin-left: $margin10;
+            margin-top: $margin10;
+            border-radius: $radius;
+        }
+        #balance {
+            text-align: center;
+            margin: $margin25;
+            @include txt-color();
+        }
+    }
+    #hero {
+        @include bg-image-gen('../favicon/csgoteams.jpg',100% 100%);
+        @include txt-color();
+        overflow: hidden;
+        #information {
+            @include txt-color(black);
+        }
+        #txt-body {
+           @include set-bg-color(rgba(228, 198, 117, 0.904));
+        }
+    }
 }
 
 section {
-    background-color: $lighbluecolor;
+    @include set-bg-color(rgb(43, 226, 141));
+    #coin1,#coin2,#coin3,#coin4,#coin5,#coin6,#coin7,#coin8,#coin9,#coin10 {
+        height: 4vh;
+        width: 2vw;
+        margin-right: $margin10;
+        margin-left: $margin10;
+        margin-top: $margin10;
+        border-radius: $radius;
+    }
+}
+
+footer {
+    @include set-bg-color(rgb(43, 226, 141));
+    .fab {
+        font-size: 10vh;
+     }
+
 }

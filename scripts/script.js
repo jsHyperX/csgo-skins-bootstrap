@@ -1,0 +1,1 @@
+$("#collapse1").collapse();
