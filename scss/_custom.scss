@@ -39,6 +39,9 @@ html,body {
         @include bg-image-gen('../favicon/csgoteams.jpg',100% 100%);
         @include txt-color();
         overflow: hidden;
+        #greet {
+            font-size: 10vw;
+        }
         #information {
             @include txt-color(black);
         }
@@ -46,24 +49,28 @@ html,body {
            @include set-bg-color(rgba(228, 198, 117, 0.904));
         }
     }
-}
 
-section {
-    @include set-bg-color(rgb(43, 226, 141));
-    #coin1,#coin2,#coin3,#coin4,#coin5,#coin6,#coin7,#coin8,#coin9,#coin10 {
-        height: 4vh;
-        width: 2vw;
-        margin-right: $margin10;
-        margin-left: $margin10;
-        margin-top: $margin10;
-        border-radius: $radius;
+    section {
+        @include set-bg-color(rgb(43, 226, 141));
+        #coin1,#coin2,#coin3,#coin4,#coin5,#coin6,#coin7,#coin8,#coin9,#coin10 {
+            height: 4vh;
+            width: 2vw;
+            margin-right: $margin10;
+            margin-left: $margin10;
+            margin-top: $margin10;
+            border-radius: $radius;
+        }
+    }
+    
+    .modaal {
+        @include set-bg-color(rgb(43, 226, 141));
+    }
+    footer {
+        @include set-bg-color(rgb(43, 226, 141));
+        .fab {
+            font-size: 10vh;
+         }
+    
     }
 }
 
-footer {
-    @include set-bg-color(rgb(43, 226, 141));
-    .fab {
-        font-size: 10vh;
-     }
-
-}
