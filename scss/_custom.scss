@@ -5,7 +5,10 @@ $margin25: 25px;
 $margin39: 39px;
 
 @mixin bg-image-gen($path:'',$sz:cover,$adjust: center center no-repeat) {
-    background: url($path) $adjust;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),url($path) $adjust;
     background-size: $sz;
 }
 
@@ -35,6 +38,16 @@ html,body {
             @include txt-color();
         }
     }
+
+    .carouselText {
+        margin: 0;
+        color: white;
+        position: relative;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;      
+    }
+
     #hero {
         @include bg-image-gen('../favicon/csgoteams.jpg',100% 100%);
         @include txt-color();
